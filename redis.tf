@@ -110,6 +110,5 @@ resource "aws_secretsmanager_secret_version" "db_credentials_version" {
     redis_host     = aws_elasticache_replication_group.redis_replication_group.primary_endpoint_address
     redis_port     = aws_elasticache_replication_group.redis_replication_group.port
     redis_password = ""
-    typeorm        = "postgres://${random_string.username.result}:${random_string.password.result}@${aws_db_instance.postgresdb.address}:${aws_db_instance.postgresdb.port}/${aws_db_instance.postgresdb.db_name}"
   })
 }
